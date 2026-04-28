@@ -5,8 +5,13 @@ The project is an interactive math learning platform that allows teachers to ass
 ---
 
 ## 🛠 Technologies
-- **Backend:** PHP 8.x + Laravel 8
-- **Frontend:** Blade, Tailwind CSS 3, Alpine.js, Laravel Mix
+- **Core Analytical Backend & Automation:** **Python 3.x** (Primary focus of the project)
+  - **Data Analysis & Processing:** `pandas`, `NumPy` used for complex aggregation of student performance metrics and math test results.
+  - **Data Visualization:** `matplotlib`, `seaborn` for generating advanced visual statistics for the teacher's dashboard.
+  - **Task Automation:** Custom Python scripts for automated evaluation of math tasks, bulk database operations, and background data processing.
+  - **Environment Management:** `venv` / `conda` for environment isolation, and `pip` managing dependencies via `requirements.txt`.
+- **Web Application Backend:** PHP 8.x + Laravel 8
+- **Frontend Application:** Blade, Tailwind CSS 3, Alpine.js, Laravel Mix
 - **Database:** SQLite
 - **Styling:** Custom CSS stylesheets (`site.css`, `card.css`, etc.) integrated with Tailwind.
 
