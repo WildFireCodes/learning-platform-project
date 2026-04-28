@@ -1,0 +1,41 @@
+.card{
+    background:var(--white);
+    position:relative;
+    border-radius:15px;
+    padding:24px;
+    height:auto;
+    box-shadow: 0px 0px 21px -5px rgba(202, 202, 202, 1);
+}
+
+.card .card-title{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--secondary);
+}
+.card .card-big-title{
+    font-size:36px;
+    font-weight:bold;
+    color:var(--secondary);
+}
+.card .card-subtitle{
+    font-size:14px;
+    color:var(--gray);
+}
+.card .value{
+    font-size:64px;
+    font-weight:bold;
+    margin:24px auto;
+    text-align:center;
+}
+.card .value.red{
+    color:red;
+}
+.card .value.green{
+    color:green;
+}
+.card .value.black{
+    color:var(--secondary);
+}
+.card .value.yellow{
+    color:#ad2a97;
+}

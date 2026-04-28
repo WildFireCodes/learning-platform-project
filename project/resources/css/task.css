@@ -1,0 +1,50 @@
+.task, .users{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:12px;
+    margin-top:16px;
+}
+
+.task .left, .users .left{
+    width:80%;
+    padding:12px;
+    background:#e7e7e7;
+    border-radius:12px;
+}
+
+.users .left{
+    width:80%;
+    padding:20px;
+    background:#e7e7e7;
+    border-radius:12px;
+}
+
+.task .left.left-only{
+    width:100%;
+}
+.task .right, .users .right{
+    width:20%;
+    padding:12px;
+    border-radius:0 12px 12px 0;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+}
+.task.red, .task.red .right{
+    background:red;
+}
+.task.yellow, .task.yellow .right{
+    background:#ad2a97;
+}
+.task.green, .task.green .right, .users.green, .users.green .right{
+    background:green;
+}
+
+.task-field-value{
+    font-weight:bold;
+    color:var(--secondary);
+}
+.task-field-name{
+    color:var(--gray);
+}

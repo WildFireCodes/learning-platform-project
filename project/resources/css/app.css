@@ -1,0 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'variables.css';
+@import 'reset.css';
+@import 'buttons.css';
+@import 'card.css';
+@import 'flex.css';
+@import 'footer.css';
+@import 'forms.css';
+@import 'header.css';
+@import 'margins.css';
+@import 'site.css';
+@import 'task.css';

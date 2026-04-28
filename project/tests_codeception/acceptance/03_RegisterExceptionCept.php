@@ -1,0 +1,75 @@
+<?php
+$I = new AcceptanceTester($scenario ?? null);
+$I->wantTo('register if name not provided');
+$I->amOnPage("/");
+$I->click("Nie masz konta? Zarejestruj się tutaj!");
+$I->seeInCurrentUrl("/register");
+$surname = "a";
+$email = "a@a.com";
+$password = "12345678";
+$I->fillField("surname", $surname);
+$I->fillField("email", $email);
+$I->fillField("password", $password);
+$I->fillField("password_confirmation", $password);
+$I->dontSeeInDatabase("users", ["email" => "a@a.com"]);
+$I->click("Zarejestruj się");
+$I->seeInCurrentUrl("/register");
+$I->see('The name field is required.');
+
+
+$I->wantTo('register if email is taken');
+$I->amOnPage("/");
+$I->click("Nie masz konta? Zarejestruj się tutaj!");
+$I->seeInCurrentUrl("/register");
+$name = "a";
+$surname = "a";
+$email = "jan.kowalski@gmail.com";
+$password = "12345678";
+$I->fillField("name", $name);
+$I->fillField("surname", $surname);
+$I->fillField("email", $email);
+$I->fillField("password", $password);
+$I->fillField("password_confirmation", $password);
+$I->dontSeeInDatabase("users", ["email" => "a@a.com"]);
+$I->click("Zarejestruj się");
+$I->seeInCurrentUrl("/register");
+$I->see('The email has already been taken.');
+
+
+$I->wantTo('register if passwords do not match');
+$I->amOnPage("/");
+$I->click("Nie masz konta? Zarejestruj się tutaj!");
+$I->seeInCurrentUrl("/register");
+$name = "a";
+$surname = "a";
+$email = "jan.kowalski@gmail.com";
+$password = "12345678";
+$password_confirm='12234567';
+$I->fillField("name", $name);
+$I->fillField("surname", $surname);
+$I->fillField("email", $email);
+$I->fillField("password", $password);
+$I->fillField("password_confirmation", $password_confirm);
+$I->dontSeeInDatabase("users", ["email" => "a@a.com"]);
+$I->click("Zarejestruj się");
+$I->seeInCurrentUrl("/register");
+$I->see('The password confirmation does not match.');
+
+$I->wantTo('register if passwords do not match');
+$I->amOnPage("/");
+$I->click("Nie masz konta? Zarejestruj się tutaj!");
+$I->seeInCurrentUrl("/register");
+$name = "a";
+$surname = "a";
+$email = "jan.kowalski@gmail.com";
+$password = "123";
+$password_confirm='123';
+$I->fillField("name", $name);
+$I->fillField("surname", $surname);
+$I->fillField("email", $email);
+$I->fillField("password", $password);
+$I->fillField("password_confirmation", $password);
+$I->dontSeeInDatabase("users", ["email" => "a@a.com"]);
+$I->click("Zarejestruj się");
+$I->seeInCurrentUrl("/register");
+$I->see('The password must be at least 8 characters.');
