@@ -1,117 +1,117 @@
-# Dokumentacja Projektu: Platforma Matematyczna
+# Project Documentation: Mathematics Platform
 
-Projekt to interaktywna platforma do nauki matematyki, umożliwiająca nauczycielom przydzielanie zadań, a uczniom ich rozwiązywanie oraz śledzenie statystyk.
+The project is an interactive math learning platform that allows teachers to assign tasks, and students to solve them and track their statistics.
 
 ---
 
-## 🛠 Technologie
+## 🛠 Technologies
 - **Backend:** PHP 8.x + Laravel 8
 - **Frontend:** Blade, Tailwind CSS 3, Alpine.js, Laravel Mix
-- **Baza danych:** SQLite
-- **Stylizacja:** Niestandardowe arkusze CSS (`site.css`, `card.css` itp.) zintegrowane z Tailwindem.
+- **Database:** SQLite
+- **Styling:** Custom CSS stylesheets (`site.css`, `card.css`, etc.) integrated with Tailwind.
 
 ---
 
-## 🚀 Jak uruchomić projekt
-Jeśli masz już zainstalowane PHP, Composer i Node.js, wykonaj poniższe kroki w folderze `project/`:
+## 🚀 How to Run the Project
+If you already have PHP, Composer, and Node.js installed, follow these steps in the `project/` directory:
 
-1. **Instalacja zależności PHP:**
+1. **Install PHP dependencies:**
    ```bash
    composer install
    ```
-2. **Instalacja zależności JS i kompilacja:**
+2. **Install JS dependencies and compile:**
    ```bash
    npm install
    npm run dev
    ```
-3. **Konfiguracja środowiska:**
+3. **Environment configuration:**
    ```bash
    cp .env.example .env
    php artisan key:generate
    ```
-4. **Baza danych (SQLite):**
+4. **Database (SQLite):**
    ```bash
    touch database/database.sqlite
    php artisan migrate:fresh --seed
    ```
-5. **Uruchomienie serwera:**
+5. **Start the server:**
    ```bash
    php artisan serve
    ```
-   Aplikacja będzie dostępna pod adresem: `http://127.0.0.1:8000`
+   The application will be available at: `http://127.0.0.1:8000`
 
 ---
 
-## 🐍 Python w Projekcie (Projekt Zaliczeniowy)
+## 🐍 Python in the Project (Graded Assignment)
 
-Niniejsza platforma matematyczna stanowi część **projektu zaliczeniowego z przedmiotu związanego z programowaniem w języku Python**. Język ten odgrywa kluczową rolę jako zaplecze analityczne i wspierające, rozszerzając możliwości głównej aplikacji napisanej w PHP.
+This mathematics platform is part of a **graded assignment for a Python programming course**. This language plays a key role as an analytical and supporting backend, expanding the capabilities of the main application written in PHP.
 
-**Główne obszary wykorzystania Pythona w projekcie:**
-- **Analiza Danych i Statystyki:** Przetwarzanie i agregacja wyników uczniów, generowanie zaawansowanych statystyk (np. z wykorzystaniem bibliotek takich jak `pandas` czy `matplotlib`), co wspiera panel nauczyciela.
-- **Zautomatyzowane Skrypty Wspierające:** Usprawnienie procesów deweloperskich, automatyzacja ewaluacji rozwiązań oraz zarządzania bazą danych (w tym wsadowe wczytywanie zadań).
-- **Przetwarzanie w tle:** Wykonywanie zadań o wysokiej złożoności obliczeniowej bez obciążania głównego serwera HTTP w Laravelu.
+**Main areas of Python usage in the project:**
+- **Data Analysis and Statistics:** Processing and aggregating student results, generating advanced statistics (e.g., using libraries such as `pandas` or `matplotlib`), which supports the teacher's dashboard.
+- **Automated Support Scripts:** Streamlining development processes, automating the evaluation of solutions, and managing the database (including batch loading of tasks).
+- **Background Processing:** Executing tasks with high computational complexity without overloading the main HTTP server in Laravel.
 
-**Instrukcje uruchomienia i konfiguracji środowiska Python:**
-- Uruchomienie skryptów wspierających powinno zawsze odbywać się w odizolowanym wirtualnym środowisku (zalecane: `venv` lub `conda`).
-- Pełna lista zależności znajduje się w pliku `requirements.txt`. Zainstaluj je używając komendy: `pip install -r requirements.txt`.
-- W trosce o porządek i integralność kodu, foldery środowiska (np. `venv/`, `.env/`) oraz wrażliwe pliki konfiguracyjne i testowe są automatycznie ignorowane przez system kontroli wersji (`.gitignore`).
-
----
-
-## 📝 Funkcjonalności
-- Rozwiązywanie zadań (Zamknięte, Otwarte, Prawda-Fałsz).
-- Podgląd statystyk ucznia.
-- Panel nauczyciela do zarządzania listą uczniów i zadań.
-- Losowe zadanie na stronie głównej dla zalogowanych użytkowników.
-
----
-**Wykonanie:** Adamiak Filip
+**Instructions for running and configuring the Python environment:**
+- Running support scripts should always be done in an isolated virtual environment (recommended: `venv` or `conda`).
+- A full list of dependencies can be found in the `requirements.txt` file. Install them using the command: `pip install -r requirements.txt`.
+- For the sake of order and code integrity, environment folders (e.g., `venv/`, `.env/`) and sensitive configuration/test files are automatically ignored by the version control system (`.gitignore`).
 
 ---
 
-## 📖 Szczegółowa specyfikacja widoków
+## 📝 Features
+- Solving tasks (Closed, Open, True/False).
+- Previewing student statistics.
+- Teacher dashboard for managing the list of students and tasks.
+- Random task on the main page for logged-in users.
+
+---
+**Author:** Adamiak Filip
+
+---
+
+## 📖 Detailed View Specification
 
 ### Welcome:
-- widok startowy z opisem strony, jej funkcjonalnością i przyciskami zaloguj/zarejestruj
+- Start view with a description of the site, its functionality, and login/register buttons.
 
-### Rejestracja:
-- widok początkowy z wyborem uczeń/nauczyciel, informacją co robią dane uprawnienia, oraz przyciskiem dalej który w zależności od roli wyświetla rejestrację ucznia/nauczyciela
-- **rejestracja ucznia:** imie, nazwisko, id_nauczyciela, mail, haslo, potwierdzenie hasla, przycisk zarejestruj
-- **rejestracja nauczyciela:** imie, nazwisko, mail, haslo, potwierdzenie hasla, przycisk zarejestruj
+### Registration:
+- Initial view with a choice of student/teacher, information on what the given permissions do, and a "next" button which, depending on the role, displays the student/teacher registration.
+- **Student registration:** first name, last name, teacher_id, email, password, password confirmation, register button.
+- **Teacher registration:** first name, last name, email, password, password confirmation, register button.
 
-### Logowanie:
-- formularz z polami email, haslo i przycisk zaloguj (bądź wysuwane logowanie na stronie welcome – zrobione w javascripcie)
+### Login:
+- Form with email, password fields and a login button (or a sliding login on the welcome page – done in JavaScript).
 
-### Strona główna:
-#### Uczeń:
-- krótki opis strony oraz jej celu, 
-- ?losowe zadanie do rozwiązania (tylko abcd, prawdopodobnie jedno na logowanie – podczas jednej sesji tylko jedno zadanie do rozwiązania - po zatwierdzeniu zaznaczenie poprawnej odpowiedzi na zielono (i błędnej na czerwono) i zmienienie borderu na zielony/czerwony w zależności od poprawności zadania)? 
-- menu w gornym pasku: statystyki, moje zadania, oraz logo/”witaj imie nazwisko”, wyloguj
-- szybkie podsumowanie
+### Main Page:
+#### Student:
+- Brief description of the site and its purpose.
+- ?Random task to solve (ABCD only, probably one per login – only one task to solve during a single session - after submission, correct answer marked green and incorrect red, and border color changed to green/red depending on the task correctness)?
+- Top menu bar: statistics, my tasks, and logo/"hello first name last name", logout.
+- Quick summary.
 
-#### Nauczyciel:
-- krótki opis strony oraz jej celu,
-- lista uczniów podpiętych do nauczyciela (albo kilku uczniów z możliwością przejścia do strony wyświetlającej pełną listę uczniów – przy każdym uczniu możliwość podglądnięcia widoku strony ucznia z poziomu nauczyciela (!inny niż to co widzi uczeń!) z zadaniami do zrobienia/rozwiązanych, przyciskiem „usuń zadanie” i statystykami);
-- menu w górnym pasku: statystyki, zadania, logo/”witaj imie nazwisko”, id_nauczyciela, wyloguj,
-- szybkie podsumowanie 
+#### Teacher:
+- Brief description of the site and its purpose.
+- List of students assigned to the teacher (or a few students with the option to go to a page displaying the full list of students – next to each student, the ability to preview the student's page view from the teacher's perspective (!different from what the student sees!) with tasks to do/solved, "delete task" button and statistics);
+- Top menu bar: statistics, tasks, logo/"hello first name last name", teacher_id, logout.
+- Quick summary.
 
-### Moje zadania:
-#### Uczeń:
-- wyświetlenie kilku pierwszych zadań do zrobienia z opcją pokaż wszystkie -> za pomocą javascriptu rozwiązanie zadania i przeslanie odpowiedzi,
-- wyświetlenie kilku pierwszych zadań zrobionych ocenionych z opcją pokaż wszystkie -> za pomocą javascriptu wyświetlenie rozwiązanego zadania z przesłaną odpowiedzią i poprawną odpowiedzią, (tytuł, polecenie, podana odpowiedź, termin oddania, data oddania, poprawna odpowiedź)
-- po kliknięciu „pokaż wszystkie” przeniesienie do strony z listą zadań (index.blade.php) 
+### My Tasks:
+#### Student:
+- Displaying the first few tasks to do with a "show all" option -> using javascript, solve the task and submit the answer.
+- Displaying the first few completed and graded tasks with a "show all" option -> using javascript, display the solved task with the submitted answer and the correct answer (title, instruction, given answer, due date, submission date, correct answer).
+- After clicking "show all", redirect to the task list page (`index.blade.php`).
 
-#### Nauczyciel:
-- wyświetl zadania -> lista wszystkich zadań dodanych przez danego nauczyciela z możliwością wyświetlenia, edycji i usunięcia zadania
-- przycisk przypisz zadanie -> formularz:
-- wyświetlenie listy uczniów w postaci checkboxow, 
-- wybor tytulu zadania 
-- termin oddania 
-- utwórz zadanie  -> formularz:
-	- pierwszy widok z wyborem rodzaju zadania:
-	- w zależności od wyboru przejście na stronę z odpowiednim formularzem (tytuł zadania, treść zadania, ?poprawna odpowiedź?, w abcd: błędne odpowiedzi, zatwierdź)
-- przeglądnij oddane zadania  (wyświetl trzy z możliwością przejścia do listy)
+#### Teacher:
+- View tasks -> list of all tasks added by a given teacher with the ability to view, edit, and delete a task.
+- "Assign task" button -> form:
+- Displaying a list of students as checkboxes.
+- Task title selection.
+- Due date.
+- Create task -> form:
+	- First view with task type selection.
+	- Depending on the selection, redirect to a page with the appropriate form (task title, task content, ?correct answer?, in ABCD: incorrect answers, submit).
+- Review submitted tasks (display three with the option to go to the list).
 
-### Statystyki: (osobno lub na stronie głównej w zależności od ilości wykresów)
-- szybkie podsumowanie raz jeszcze na górze strony, 
-- wykresy różne itd. 
+### Statistics: (separate or on the main page depending on the number of charts)
+- Quick summary once again at the top of the page.
+- Various charts, etc.
