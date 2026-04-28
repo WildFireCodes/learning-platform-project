@@ -42,12 +42,19 @@ Jeśli masz już zainstalowane PHP, Composer i Node.js, wykonaj poniższe kroki 
 
 ---
 
-## 🐍 Python w Projekcie
+## 🐍 Python w Projekcie (Projekt Zaliczeniowy)
 
-Projekt może wykorzystywać język Python do analizy danych, automatyzacji lub skryptów wspierających. W przypadku korzystania z Pythona:
-- Zaleca się używanie wirtualnego środowiska (np. `venv` lub `conda`).
-- Wymagane zależności powinny być dokumentowane w pliku `requirements.txt`.
-- Foldery środowiska (np. `venv/`, `.env/`) oraz pliki tymczasowe są automatycznie ignorowane przez system kontroli wersji (`.gitignore`).
+Niniejsza platforma matematyczna stanowi część **projektu zaliczeniowego z przedmiotu związanego z programowaniem w języku Python**. Język ten odgrywa kluczową rolę jako zaplecze analityczne i wspierające, rozszerzając możliwości głównej aplikacji napisanej w PHP.
+
+**Główne obszary wykorzystania Pythona w projekcie:**
+- **Analiza Danych i Statystyki:** Przetwarzanie i agregacja wyników uczniów, generowanie zaawansowanych statystyk (np. z wykorzystaniem bibliotek takich jak `pandas` czy `matplotlib`), co wspiera panel nauczyciela.
+- **Zautomatyzowane Skrypty Wspierające:** Usprawnienie procesów deweloperskich, automatyzacja ewaluacji rozwiązań oraz zarządzania bazą danych (w tym wsadowe wczytywanie zadań).
+- **Przetwarzanie w tle:** Wykonywanie zadań o wysokiej złożoności obliczeniowej bez obciążania głównego serwera HTTP w Laravelu.
+
+**Instrukcje uruchomienia i konfiguracji środowiska Python:**
+- Uruchomienie skryptów wspierających powinno zawsze odbywać się w odizolowanym wirtualnym środowisku (zalecane: `venv` lub `conda`).
+- Pełna lista zależności znajduje się w pliku `requirements.txt`. Zainstaluj je używając komendy: `pip install -r requirements.txt`.
+- W trosce o porządek i integralność kodu, foldery środowiska (np. `venv/`, `.env/`) oraz wrażliwe pliki konfiguracyjne i testowe są automatycznie ignorowane przez system kontroli wersji (`.gitignore`).
 
 ---
 
